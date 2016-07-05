@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xsl:output version="1.0" encoding="UTF-8" indent="no" omit-xml-declaration="no" media-type="text/html"/>
+	<xsl:template match="/">
+		<html>
+			<head>
+				<title>Matrix Air Tracer Print Template</title>
+				<style type="text/css">
+				
+				.maintitle 
+				{	font-weight:bold; color:black; font-size:35; font-family:Ariel; position:relative; right:10px}
+
+				.protocoltitle 
+				{ 	font-weight:bold; color:navy; font-size:28; font-style:italic; font-family:Ariel; position:relative; right:20px	}
+				
+				.datentime
+				{ 	font-weight:bold; font-size:20; font-style:italic; font-family:Ariel; position:relative; right:20px; bottom:10px	}
+				
+				.generalinfo
+				{	font-family:Ariel;	font-size:14; font-weight:bold; position:relative; left:10px;	}
+				
+				.generalexplanation
+				{	font-family:Ariel;	font-size:14; position:relative; left:5px; top:5px; margin-right:10px }
+
+				.pdutitle
+				{	font-weight:bold; color:black; font-size:25; font-family:Ariel; }
+				
+				td.pdutitlelvl2
+				{	font-weight:bold; color:black; font-size:20; font-family:Ariel; 
+					background-color:#A4CBEC; text-align:center;
+					border-top-width:0.2mm; border-top-style:solid; border-top-color:slategray;
+					border-left-width:0.2mm; border-left-style:solid; border-left-color:slategray;
+					border-right-width:0.2mm; border-right-style:solid; border-right-color:slategray;	}
+				
+				th.frontleftcenter
+				{	font-family:Ariel;	font-size:14; font-weight:bold;
+					border-top-width:0.2mm; border-top-style:solid; border-top-color:white;
+					border-left-width:0.2mm; border-left-style:solid; border-left-color:white;
+					border-bottom-width:0.2mm; border-bottom-style:solid; border-bottom-color:white	}
+				
+				th.frontright
+				{	font-family:Ariel;	font-size:14; font-weight:bold;
+					border-top-width:0.4mm; border-top-style:solid; border-top-color:white;
+					border-left-width:0.4mm; border-left-style:solid; border-left-color:white;
+					border-right-width:0.4mm; border-right-style:solid; border-right-color:white;
+					border-bottom-width:0.4mm; border-bottom-style:solid; border-bottom-color:white	}
+
+				td.frontleftcenter
+				{	border-left-width:0.4mm; border-left-style:solid; border-left-color:white;
+					border-bottom-width:0.4mm; border-bottom-style:solid; border-bottom-color:white	}
+					
+				td.frontright
+				{	border-left-width:0.4mm; border-left-style:solid; border-left-color:white;
+					border-right-width:0.4mm; border-right-style:solid; border-right-color:white;
+					border-bottom-width:0.4mm; border-bottom-style:solid; border-bottom-color:white	}
+					
+				th.pduinfo
+				{	border-top-width:0.2mm; border-top-style:solid; border-top-color:white;
+					border-left-width:0.2mm; border-left-style:solid; border-left-color:white;
+					border-right-width:0.2mm; border-right-style:solid; border-right-color:white;
+					border-bottom-width:0.2mm; border-bottom-style:solid; border-bottom-color:white	}
+				
+				td.pduinfocontent
+				{	background-color:#F0F8FF; font-size:12;
+					border-left-width:0.2mm; border-left-style:solid; border-left-color:white;
+					border-right-width:0.2mm; border-right-style:solid; border-right-color:white;
+					border-bottom-width:0.2mm; border-bottom-style:solid; border-bottom-color:white 	}
+				
+				td.leftcenter
+				{	border-left-width:0.2mm; border-left-style:solid; border-left-color:slategray;
+					border-bottom-width:0.2mm; border-bottom-style:solid; border-bottom-color:slategray	}
+				
+				td.right
+				{	background-color:gainsboro;
+					border-left-width:0.2mm; border-left-style:solid; border-left-color:slategray;
+					border-right-width:0.2mm; border-right-style:solid; border-right-color:slategray;
+					border-bottom-width:0.2mm; border-bottom-style:solid; border-bottom-color:slategray	}
+				
+				td.rightoriginal
+				{	border-left-width:0.2mm; border-left-style:solid; border-left-color:slategray;
+					border-right-width:0.2mm; border-right-style:solid; border-right-color:slategray;
+					border-bottom-width:0.2mm; border-bottom-style:solid; border-bottom-color:slategray	}
+				
+				td.topleftcenter
+				{	border-top-width:0.2mm; border-top-style:solid; border-top-color:slategray;
+					border-left-width:0.2mm; border-left-style:solid; border-left-color:slategray;
+					border-bottom-width:0.2mm; border-bottom-style:solid; border-bottom-color:slategray	}
+				
+				td.topright
+				{	border-left-width:0.2mm; border-left-style:solid; border-left-color:slategray;
+					border-top-width:0.2mm; border-top-style:solid; border-top-color:slategray;
+					border-right-width:0.2mm; border-right-style:solid; border-right-color:slategray;
+					border-bottom-width:0.2mm; border-bottom-style:solid; border-bottom-color:slategray	}
+				
+				td.valuetop
+				{	font-weight:bold; font-decoration:underline; background-color:gainsboro; border: 0.2mm solid silver; font-size:12}
+				
+				td.valuecell
+				{ 	background-color:white; border: 0.2mm solid gainsboro; font-size:12	}
+					
+				.rangedata
+				{ 	background-color:gainsboro; font-weight:bold; font-size:12 	}
+				
+			</style>
+			</head>
+			<body>
+			<xsl:variable name="opcode"><xsl:value-of select="/Protocol/PDU[last()]/@SecondaryKeyField"/></xsl:variable>
+			
+				<table border="0" cellpadding="5" cellspacing="0" width="100%" bgcolor="#A4CBEC">
+					<tr><td align="left"><img src="Mot.tmp" alt="Logo"/></td></tr>
+				</table>
+				
+				<p class="maintitle" align="right">
+					<br/><img src="ATAIco.tmp" alt="icon" height="22" width="27" /> Matrix Air Tracer Application
+				</p>	<br/>
+				
+				<p class="protocoltitle" align="right">
+					<xsl:for-each select="Protocol"><xsl:value-of select="@Name"/></xsl:for-each>
+				</p>
+				
+				<p class="datentime" align="right">
+					<script type="text/vbscript">document.write(FormatDateTime(Now(),vbLongDate) +" , " + FormatDateTime(Now(),vbLongTime))</script>
+				</p>
+				
+<xsl:comment>
+BEGIN OF GENERAL INFORMATION TABLE
+</xsl:comment>
+
+				<table align="center" border="0" cellpadding="2" cellspacing="0" width="100%" style="font-size:14">
+					<tbody>
+						<tr bgcolor="#A4CBEC"><td><span class="generalinfo">General Information</span></td></tr>
+						<tr><td>
+							<p align="justify" class="generalexplanation">
+							This section detail the header information  used by the Matrix Air Tracer Application to identify different protocols. Every protocol template file will contain a unique ProtocolID. All protocol template files are available in the vob <a href="\\ltd\documents\AirTracer">\\ltd\documents\AirTracer</a>.
+							Please ensure that the protocol template file you are working with is from the vob specified. If you are working with a new protocol template file, please register your file with the Matrix Air Tracer Application development team to get a Protocol ID. 
+							</p><br/>
+						</td></tr>
+						<tr bgcolor="#A4CBEC"><td><span class="generalinfo">Comment / Description of the Protocol ID</span></td></tr>
+						<tr><td>
+							<p class="generalexplanation">
+								<xsl:for-each select="/Protocol">
+									<xsl:choose>
+										<xsl:when test="Comment=''">N/A</xsl:when>
+										<xsl:otherwise><xsl:value-of select="Comment"/></xsl:otherwise>
+									</xsl:choose>
+								</xsl:for-each>
+							</p><br/>
+						</td></tr>
+						<tr><td>
+							<table cellpadding="3" cellspacing="0" border="0" width="80%" align="center">
+								<tbody>
+									<tr bgcolor="#A4CBEC">
+										<th class="frontleftcenter">Protocol ID (Hex)</th>
+										<th class="frontleftcenter">Protocol ID Size (Byte)</th>
+										<th class="frontleftcenter">Primary Key / Opcode Field Position</th>
+										<th class="frontright">Amount of PDU in the template</th>
+									</tr>
+									<tr bgcolor="#F0F8FF">
+										<td class="frontleftcenter" align="center">
+											<xsl:for-each select="/Protocol"><xsl:for-each select="ATHeader">
+												<xsl:value-of select="PrimaryKeyField"/>
+											</xsl:for-each></xsl:for-each>
+										</td>
+										<td class="frontleftcenter" align="center">
+											<xsl:for-each select="/Protocol"><xsl:for-each select="ATHeader"><xsl:for-each select="PrimaryKeyField">
+												<xsl:value-of select="@Size"/>
+										   </xsl:for-each></xsl:for-each></xsl:for-each>
+										</td>
+										<td class="frontleftcenter" align="center">
+											<xsl:for-each select="/Protocol"><xsl:for-each select="PDU">
+												<xsl:if test="position()=last()">
+													<xsl:value-of select="@SecondaryKeyField"/>
+												</xsl:if>
+											</xsl:for-each></xsl:for-each>
+										</td>
+										<td class="frontright" align="center"><xsl:value-of select="count(Protocol/PDU)"/></td>
+									</tr>
+								</tbody>
+							</table><br/>
+						</td></tr>
+						<tr bgcolor="#A4CBEC"><td><span class="generalinfo">PDUs in this protocol template file</span></td></tr>
+						<tr><td>
+							<ol type="1" class="generalexplanation">
+								<xsl:for-each select="/Protocol"><xsl:for-each select="PDU">
+									<li><xsl:value-of select="@Name"/></li>
+								</xsl:for-each></xsl:for-each>
+							</ol>								
+						</td></tr>
+					</tbody>
+				</table>
+				<br/>
+				
+<xsl:comment>
+BEGIN OF PDU SECTION
+</xsl:comment>
+
+				<xsl:for-each select="Protocol">
+					<xsl:for-each select="PDU">
+					<div style="page-break-before:always">
+					
+						<table width="100%" align="center" cellpadding="10" cellspacing="0">
+								<tr bgcolor="#A4CBEC"><td>
+									<div class="pdutitle">
+										<xsl:value-of select="@Name"/>
+									</div>
+								</td></tr>
+						</table>
+						<br/>
+					
+						<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+								<tr>
+								<td width="70%" height="100%" valign="top">
+										<table border="0" bgcolor="#A4CBEC" align="center" width="95%" cellpadding="5" cellspacing="0">
+												<tr>
+													<th class="pduinfo">
+														Packet Data Unit (PDU) General Information
+													</th>
+												</tr>
+												<tr>
+													<td class="pduinfocontent">
+														<b>PDU Size : </b>
+														<xsl:value-of select="@Size"/> Byte(s)<br/>
+														<xsl:choose>
+															<xsl:when test="Comment=''">
+																<b>Comments : </b>N/A</xsl:when>
+															<xsl:otherwise>
+																<b>Comments : </b>
+																<xsl:value-of select="Comment"/>
+															</xsl:otherwise>
+														</xsl:choose>
+														<br/>
+														<b>Field Count : </b>
+														<xsl:value-of select="count(Field)"/>
+													</td>
+												</tr>
+										</table>
+									</td>
+									<td width="30%" height="100%" valign="top">
+										<table border="1" bgcolor="#A4CBEC" align="center" cellpadding="5" cellspacing="0" width="100">
+												<tr>
+													<th class="pduinfo" colspan="2" style="font-size:10">Legend</th>
+												</tr>
+												<tr>
+													<td bgcolor="#FAEBD7" width="'25%"></td>
+													<td bgcolor="#F0F8FF" style="font-size:10">Bit Field</td>
+												</tr>
+												<tr>
+													<td bgcolor="gainsboro" width="25%"></td>
+													<td bgcolor="#F0F8FF" style="font-size:10">Byte Field</td>
+												</tr>
+												<tr>
+													<td bgcolor="white"><img src="key.tmp"/></td>
+													<td style="font-size:10">Key Field</td>
+												</tr>
+										</table>
+									</td>
+								</tr>
+						</table>
+						<br/>
+							
+<xsl:comment>
+BEGIN OF PDU MAP
+</xsl:comment>
+
+						<table border="0" bgcolor="#A4CBEC" align="center" width="95%" cellpadding="3" cellspacing="0">
+						<tbody>
+							<tr><td class="pdutitlelvl2">Packet Data Units (PDU) Map</td></tr>
+						</tbody>
+						</table>
+						
+						<table border="0" bgcolor="#A4CBEC" align="center" width="95%" cellpadding="5" cellspacing="0">
+							<tbody>
+								<tr>
+									<xsl:call-template name="byteindicator">
+										<xsl:with-param name="pos" select="0"/>
+										<xsl:with-param name="maxbyte" select="@Size - 1"/>
+									</xsl:call-template>
+								</tr>
+								<tr bgcolor="gainsboro">
+									<xsl:for-each select="Field">
+									
+										<xsl:choose>
+											<xsl:when test="@BitFlag='true'">
+
+												<xsl:choose>
+													<xsl:when test="position() = last()">
+														<td class="rightoriginal" style="font-size:10" bgcolor="#FAEBD7">
+
+															<xsl:choose>
+																<xsl:when test="$opcode = position()">
+																	<table><tr>
+																		<td><img src="key.tmp"/></td><td style="font-size:10"><xsl:value-of select="@Name"/></td>
+																	</tr></table>
+																</xsl:when>
+																<xsl:otherwise><xsl:value-of select="@Name"/></xsl:otherwise>
+															</xsl:choose>
+
+														</td>
+													</xsl:when>
+													<xsl:otherwise>
+														<td class="leftcenter" bgcolor="#FAEBD7" style="font-size:10">
+
+															<xsl:choose>
+																<xsl:when test="$opcode = position()">
+																	<table><tr>
+																		<td><img src="key.tmp"/></td><td  style="font-size:10"><xsl:value-of select="@Name"/></td>
+																	</tr></table>
+																</xsl:when>
+																<xsl:otherwise><xsl:value-of select="@Name"/></xsl:otherwise>
+															</xsl:choose>
+
+														</td>
+													</xsl:otherwise>
+												</xsl:choose>
+
+											</xsl:when>
+
+											<xsl:otherwise>
+												<xsl:element name="td">
+													<xsl:attribute name="colspan"><xsl:value-of select="@Size"/></xsl:attribute>
+													<xsl:attribute name="class"><xsl:choose><xsl:when test="position() = last()">rightoriginal</xsl:when><xsl:otherwise>leftcenter</xsl:otherwise></xsl:choose></xsl:attribute>
+													<xsl:attribute name="style">font-size:10</xsl:attribute>
+													<xsl:value-of select="@Name"/>
+												</xsl:element>
+											</xsl:otherwise>
+
+										</xsl:choose>
+
+									</xsl:for-each>
+								</tr>
+							</tbody>
+						</table>
+						<br/>
+							
+<xsl:comment>
+BEGIN OF PDU FIELD TABLE
+</xsl:comment>
+
+							<table border="0" cellpadding="3" cellspacing="0" width="95%" align="center" style="font-size:12">
+								<tbody>
+									<tr><td class="pdutitlelvl2">Field Details</td></tr>
+								</tbody>
+							</table>
+							
+							<table border="0" cellpadding="3" cellspacing="0" width="95%" align="center" style="font-size:12">
+								<thead>
+									<tr bgcolor="#A4CBEC" align="center">
+										<td class="topleftcenter" width="35" style="font-weight:bold">Field Type</td>
+										<td class="topleftcenter" width="45" style="font-weight:bold">Byte Position</td>
+										<td class="topleftcenter" width="100" style="font-weight:bold">Field Name</td>
+										<td class="topleftcenter" width="50" style="font-weight:bold">Field Size</td>
+										<td class="topleftcenter" width="130" style="font-weight:bold">Comment</td>
+										<td class="topright" style="font-weight:bold">Field Information</td>
+									</tr>
+								</thead>
+								<tbody>
+									<xsl:for-each select="Field">
+										<xsl:choose>
+											<xsl:when test="@BitFlag='true'">
+												<tr bgcolor="#FAEBD7">
+													<td class="leftcenter" width="35" style="font-weight:bold" align="center">BIT</td>
+													<td class="leftcenter" width="45" style="font-weight:bold" align="center">
+														<xsl:value-of select="@Pos"/>
+													</td>
+													<xsl:choose>
+														<xsl:when test="$opcode=position()">
+															<td class="leftcenter" width="100"><img src="key.tmp"/><xsl:text>  </xsl:text><xsl:value-of select="@Name"/></td>
+														</xsl:when>
+														<xsl:otherwise>
+															<td class="leftcenter" width="100"><xsl:value-of select="@Name"/></td>
+														</xsl:otherwise>
+													</xsl:choose>
+													<td class="leftcenter" width="50">
+														<xsl:value-of select="@Size"/> Bit(s)</td>
+													<xsl:choose>
+														<xsl:when test="Comment=''">
+															<td class="leftcenter" width="130">N/A</td>
+														</xsl:when>
+														<xsl:otherwise>
+															<td class="leftcenter" width="130">
+																<xsl:value-of select="Comment"/>
+															</td>
+														</xsl:otherwise>
+													</xsl:choose>
+													<td class="right">
+														<xsl:choose>
+															<xsl:when test="Value">
+																<table border="0" cellpadding="1" cellspacing="0" width="100%">
+																	<tr>
+																		<td class="valuetop">Value</td>
+																		<td class="valuetop">Description</td>
+																		<td class="valuetop">Value Comment</td>
+																	</tr>
+																	<xsl:for-each select="Value">
+																		<tr>
+																			<xsl:apply-templates select="."/>
+																		</tr>
+																	</xsl:for-each>
+																</table>
+															</xsl:when>
+															<xsl:when test="Range">
+																<table border="0" cellpadding="1" cellspacing="0" width="100%">
+																	<tr>
+																		<td class="rangedata">
+																Numeric Value with:- <br/>
+																			<ul type="square">
+																				<li>Minimum = <xsl:value-of select="Range/@Min"/>
+																				</li>
+																				<li>Maximum = <xsl:value-of select="Range/@Max"/>
+																				</li>
+																			</ul>
+																		</td>
+																	</tr>
+																</table>
+															</xsl:when>
+															<xsl:otherwise>
+																<table border="0" cellpadding="1" cellspacing="0" width="100%">
+																	<tr>
+																		<td class="rangedata">User Data</td>
+																	</tr>
+																</table>
+															</xsl:otherwise>
+														</xsl:choose>
+													</td>
+												</tr>
+											</xsl:when>
+											<xsl:otherwise>
+												<tr bgcolor="gainsboro">
+													<td class="leftcenter" width="35" style="font-weight:bold" align="center">BYTE</td>
+													<td class="leftcenter" width="45" style="font-weight:bold" align="center">
+														<xsl:value-of select="@Pos"/>
+													</td>
+													<xsl:choose>
+														<xsl:when test="$opcode=position()">
+															<td class="leftcenter" width="100"><img src="key.tmp"/><xsl:text>  </xsl:text><xsl:value-of select="@Name"/></td>
+														</xsl:when>
+														<xsl:otherwise>
+															<td class="leftcenter" width="100"><xsl:value-of select="@Name"/></td>
+														</xsl:otherwise>
+													</xsl:choose>
+													<td class="leftcenter" width="50">
+														<xsl:value-of select="@Size"/> Byte(s)</td>
+													<xsl:choose>
+														<xsl:when test="Comment=''">
+															<td class="leftcenter" width="130">N/A</td>
+														</xsl:when>
+														<xsl:otherwise>
+															<td class="leftcenter" width="130">
+																<xsl:value-of select="Comment"/>
+															</td>
+														</xsl:otherwise>
+													</xsl:choose>
+													<td class="right">
+														<xsl:choose>
+															<xsl:when test="Value">
+																<table border="0" cellpadding="1" cellspacing="0" width="100%">
+																	<tr>
+																		<td class="valuetop">Value</td>
+																		<td class="valuetop">Description</td>
+																		<td class="valuetop">Value Comment</td>
+																	</tr>
+																	<xsl:for-each select="Value">
+																		<tr>
+																			<xsl:apply-templates select="."/>
+																		</tr>
+																	</xsl:for-each>
+																</table>
+															</xsl:when>
+															<xsl:when test="Range">
+																<table border="0" cellpadding="1" cellspacing="0" width="100%">
+																	<tr>
+																		<td class="rangedata">
+																Numeric Value with:- <br/>
+																			<ul type="square">
+																				<li>Minimum = <xsl:value-of select="@Min"/>
+																				</li>
+																				<li>Maximum = <xsl:value-of select="@Max"/>
+																				</li>
+																			</ul>
+																		</td>
+																	</tr>
+																</table>
+															</xsl:when>
+															<xsl:otherwise>
+																<table border="0" cellpadding="1" cellspacing="0" width="100%">
+																	<tr>
+																		<td class="rangedata">User Data</td>
+																	</tr>
+																</table>
+															</xsl:otherwise>
+														</xsl:choose>
+													</td>
+												</tr>
+											</xsl:otherwise>
+										</xsl:choose>
+									</xsl:for-each>
+								</tbody>
+							</table>
+						</div>
+					</xsl:for-each>
+				</xsl:for-each>
+				<br/>
+			</body>
+		</html>
+	</xsl:template>
+	
+	
+	<xsl:template match="Value">
+		<td class="valuecell" width="45">
+			<xsl:apply-templates/>
+		</td>
+	</xsl:template>
+	
+	
+	<xsl:template match="Comment">
+		<td class="valuecell" width="90">
+			<xsl:value-of select="../@Description"/>
+		</td>
+		<xsl:choose>
+			<xsl:when test=".=''">
+				<td class="valuecell">N/A</td>
+			</xsl:when>
+			<xsl:otherwise>
+				<td class="valuecell">
+					<xsl:apply-templates/>
+				</td>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	
+
+	<xsl:template name="byteindicator">
+		<xsl:param name="pos"/>
+		<xsl:param name="maxbyte"/>
+		<xsl:param name="spancount" select="0"/>
+		<xsl:if test="$pos &lt;= $maxbyte">
+			<xsl:element name="td">
+				<xsl:attribute name="colspan"><xsl:value-of select="count(Field[@Pos = $pos])"/></xsl:attribute>
+				<xsl:attribute name="style">font-weight:bold; text-align:center</xsl:attribute>
+				<xsl:attribute name="class"><xsl:choose><xsl:when test="$pos = $maxbyte">topright</xsl:when><xsl:otherwise>topleftcenter</xsl:otherwise></xsl:choose></xsl:attribute>
+				<xsl:value-of select="$pos"/>
+			</xsl:element>
+			<xsl:call-template name="byteindicator">
+				<xsl:with-param name="pos" select="$pos + 1"/>
+				<xsl:with-param name="maxbyte" select="$maxbyte"/>
+			</xsl:call-template>
+		</xsl:if>
+	</xsl:template>
+	
+</xsl:stylesheet>
