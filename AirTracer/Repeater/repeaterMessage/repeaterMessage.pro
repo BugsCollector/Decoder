@@ -3219,6 +3219,7 @@
 		<Field Name="FLCO - Full Link Control Opcode" Pos="10" Size="6" BitFlag="true" BitPos="0">
 			<Comment>This indicates the Link Control Format opcode.This has values of 0 through 31 and is set appropriately for the different commands or information and shall be determined by the manufacturer since this is a non-standard format.</Comment>
 			<Value Description="Group Voice Channel User Opcode">0X00<Comment>both inbound and outbound messages.</Comment></Value>
+			<Value Description="Unit to Unit Voice Channel User Opcode">0X03<Comment>both inbound and outbound messages.</Comment></Value>
 		</Field>
 		<Field Name="R - Reserved" Pos="10" Size="1" BitFlag="true" BitPos="6">
 			<Comment></Comment>
@@ -3341,6 +3342,7 @@
 		<Field Name="FLCO - Full Link Control Opcode" Pos="10" Size="6" BitFlag="true" BitPos="0">
 			<Comment>This indicates the Link Control Format opcode.This has values of 0 through 31 and is set appropriately for the different commands or information and shall be determined by the manufacturer since this is a non-standard format.</Comment>
 			<Value Description="Group Voice Channel User Opcode">0X00<Comment>both inbound and outbound messages.</Comment></Value>
+			<Value Description="Unit to Unit Voice Channel User Opcode">0X03<Comment>both inbound and outbound messages.</Comment></Value>
 		</Field>
 		<Field Name="R - Reserved" Pos="10" Size="1" BitFlag="true" BitPos="6">
 			<Comment></Comment>
