@@ -2308,6 +2308,7 @@
 			<Value Description="Slot Helper Option">0x29740000<Comment>0x2974</Comment></Value>
 			<Value Description="Transmitter Interrupt Option">0x296B0000<Comment>0x296B</Comment></Value>
 			<Value Description="Send CWID Option">0x59000000<Comment>0x5900</Comment></Value>
+			<Value Description="Confirm OTA Timing Option">0x297D0000<Comment>0x5900</Comment></Value>
 		</Field>
 		<Field Name="Option 2" Pos="7" Size="4" BitFlag="false">
 			<Comment></Comment>
@@ -2324,6 +2325,7 @@
 			<Value Description="Slot Helper Option">0x29740000<Comment>0x2974</Comment></Value>
 			<Value Description="Transmitter Interrupt Option">0x296B0000<Comment>0x296B</Comment></Value>
 			<Value Description="Send CWID Option">0x59000000<Comment>0x5900</Comment></Value>
+			<Value Description="Confirm OTA Timing Option">0x297D0000<Comment>0x5900</Comment></Value>
 		</Field>
 		<Field Name="Option 3" Pos="11" Size="4" BitFlag="false">
 			<Comment></Comment>
@@ -2340,6 +2342,7 @@
 			<Value Description="Slot Helper Option">0x29740000<Comment>0x2974</Comment></Value>
 			<Value Description="Transmitter Interrupt Option">0x296B0000<Comment>0x296B</Comment></Value>
 			<Value Description="Send CWID Option">0x59000000<Comment>0x5900</Comment></Value>
+			<Value Description="Confirm OTA Timing Option">0x297D0000<Comment>0x5900</Comment></Value>
 		</Field>
 		<Field Name="Option 4" Pos="15" Size="4" BitFlag="false">
 			<Comment></Comment>
@@ -2356,6 +2359,7 @@
 			<Value Description="Slot Helper Option">0x29740000<Comment>0x2974</Comment></Value>
 			<Value Description="Transmitter Interrupt Option">0x296B0000<Comment>0x296B</Comment></Value>
 			<Value Description="Send CWID Option">0x59000000<Comment>0x5900</Comment></Value>
+			<Value Description="Confirm OTA Timing Option">0x297D0000<Comment>0x5900</Comment></Value>
 		</Field>
 		<Field Name="Option 5" Pos="19" Size="4" BitFlag="false">
 			<Comment></Comment>
@@ -2372,6 +2376,7 @@
 			<Value Description="Slot Helper Option">0x29740000<Comment>0x2974</Comment></Value>
 			<Value Description="Transmitter Interrupt Option">0x296B0000<Comment>0x296B</Comment></Value>
 			<Value Description="Send CWID Option">0x59000000<Comment>0x5900</Comment></Value>
+			<Value Description="Confirm OTA Timing Option">0x297D0000<Comment>0x5900</Comment></Value>
 		</Field>
 		<Field Name="Option 6" Pos="23" Size="4" BitFlag="false">
 			<Comment></Comment>
@@ -2388,6 +2393,7 @@
 			<Value Description="Slot Helper Option">0x29740000<Comment>0x2974</Comment></Value>
 			<Value Description="Transmitter Interrupt Option">0x296B0000<Comment>0x296B</Comment></Value>
 			<Value Description="Send CWID Option">0x59000000<Comment>0x5900</Comment></Value>
+			<Value Description="Confirm OTA Timing Option">0x297D0000<Comment>0x5900</Comment></Value>
 		</Field>
 		<Field Name="Option 7" Pos="27" Size="4" BitFlag="false">
 			<Comment></Comment>
@@ -2404,6 +2410,7 @@
 			<Value Description="Slot Helper Option">0x29740000<Comment>0x2974</Comment></Value>
 			<Value Description="Transmitter Interrupt Option">0x296B0000<Comment>0x296B</Comment></Value>
 			<Value Description="Send CWID Option">0x59000000<Comment>0x5900</Comment></Value>
+			<Value Description="Confirm OTA Timing Option">0x297D0000<Comment>0x5900</Comment></Value>
 		</Field>
 		<Field Name="Option 8" Pos="31" Size="4" BitFlag="false">
 			<Comment></Comment>
@@ -2420,6 +2427,7 @@
 			<Value Description="Slot Helper Option">0x29740000<Comment>0x2974</Comment></Value>
 			<Value Description="Transmitter Interrupt Option">0x296B0000<Comment>0x296B</Comment></Value>
 			<Value Description="Send CWID Option">0x59000000<Comment>0x5900</Comment></Value>
+			<Value Description="Confirm OTA Timing Option">0x297D0000<Comment>0x5900</Comment></Value>
 		</Field>
 		<Field Name="Option 9" Pos="35" Size="4" BitFlag="false">
 			<Comment></Comment>
@@ -2436,6 +2444,7 @@
 			<Value Description="Slot Helper Option">0x29740000<Comment>0x2974</Comment></Value>
 			<Value Description="Transmitter Interrupt Option">0x296B0000<Comment>0x296B</Comment></Value>
 			<Value Description="Send CWID Option">0x59000000<Comment>0x5900</Comment></Value>
+			<Value Description="Confirm OTA Timing Option">0x297D0000<Comment>0x5900</Comment></Value>
 		</Field>
 		<Field Name="Padding" Pos="39" Size="3" BitFlag="false">
 		<Data/>
@@ -3219,7 +3228,6 @@
 		<Field Name="FLCO - Full Link Control Opcode" Pos="10" Size="6" BitFlag="true" BitPos="0">
 			<Comment>This indicates the Link Control Format opcode.This has values of 0 through 31 and is set appropriately for the different commands or information and shall be determined by the manufacturer since this is a non-standard format.</Comment>
 			<Value Description="Group Voice Channel User Opcode">0X00<Comment>both inbound and outbound messages.</Comment></Value>
-			<Value Description="Unit to Unit Voice Channel User Opcode">0X03<Comment>both inbound and outbound messages.</Comment></Value>
 		</Field>
 		<Field Name="R - Reserved" Pos="10" Size="1" BitFlag="true" BitPos="6">
 			<Comment></Comment>
@@ -3342,7 +3350,6 @@
 		<Field Name="FLCO - Full Link Control Opcode" Pos="10" Size="6" BitFlag="true" BitPos="0">
 			<Comment>This indicates the Link Control Format opcode.This has values of 0 through 31 and is set appropriately for the different commands or information and shall be determined by the manufacturer since this is a non-standard format.</Comment>
 			<Value Description="Group Voice Channel User Opcode">0X00<Comment>both inbound and outbound messages.</Comment></Value>
-			<Value Description="Unit to Unit Voice Channel User Opcode">0X03<Comment>both inbound and outbound messages.</Comment></Value>
 		</Field>
 		<Field Name="R - Reserved" Pos="10" Size="1" BitFlag="true" BitPos="6">
 			<Comment></Comment>
