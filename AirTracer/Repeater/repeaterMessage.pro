@@ -4259,7 +4259,7 @@
 			<Comment></Comment>
 			<Value Description="Unicode UTF-16BE">0x0014<Comment></Comment></Value>
 		</Field>
-		<Field Name="Bit Padding" Pos="19" Size="1" BitFlag="false">
+		<Field Name="Bit Padding 0" Pos="19" Size="1" BitFlag="false">
 			<Comment></Comment>
 			<Data/>
 		</Field>
@@ -4267,7 +4267,7 @@
 			<Comment></Comment>
 			<Data/>
 		</Field>
-		<Field Name="Bit Padding" Pos="22" Size="1" BitFlag="false">
+		<Field Name="Bit Padding 1" Pos="22" Size="1" BitFlag="false">
 			<Comment></Comment>
 			<Data/>
 		</Field>
@@ -4285,6 +4285,154 @@
 		<Field Name="Outbound Flag" Pos="43" Size="1" BitFlag="false">
 			<Comment></Comment>
 			<Value Description="Outbound">0x0000<Comment></Comment></Value>
+		</Field>
+	</PDU>
+	<PDU Name="Outbound DBH SyncBeacon" Size="44" SecondaryKeyField="3,20">
+		<Comment></Comment>
+		<Field Name="Peer ID" Pos="0" Size="1" BitFlag="false">
+			<Comment></Comment>
+			<Data/>
+		</Field>
+		<Field Name="Slot ID" Pos="1" Size="1" BitFlag="false">
+			<Comment></Comment>
+			<Data/>
+		</Field>
+		<Field Name="Type" Pos="2" Size="1" BitFlag="false">
+			<Comment></Comment>
+			<Value Description="DBH Sync Beacon">0x000B<Comment></Comment></Value>
+		</Field>
+		<Field Name="Status" Pos="3" Size="1" BitFlag="false">
+			<Comment></Comment>
+			<Data/>
+		</Field>
+		<Field Name="Length" Pos="4" Size="2" BitFlag="false">
+			<Comment></Comment>
+		</Field>
+		<Field Name="SigBits" Pos="6" Size="2" BitFlag="false">
+			<Comment></Comment>
+		</Field>
+		<Field Name="Data Size" Pos="8" Size="2" BitFlag="false">
+			<Comment></Comment>
+		</Field>
+		<Field Name="Opcode" Pos="10" Size="6" BitFlag="true" BitPos="0">
+			<Value Description="SyncBeacon">0x0017</Value>
+		</Field>
+		<Field Name="LE Bit" Pos="10" Size="1" BitFlag="true" BitPos="6">
+			<Comment></Comment>
+		</Field>
+		<Field Name="PF - Protect Flag" Pos="10" Size="1" BitFlag="true" BitPos="7">
+			<Comment>this designates the protection mode for this CSBK</Comment>
+			<Value Description="Protected Mode">0x0001<Comment></Comment></Value>
+			<Value Description="Non-protected Mode">0x0000<Comment></Comment></Value>
+		</Field>
+		<Field Name="Manufacturer's ID" Pos="11" Size="1" BitFlag="false">
+			<Comment>identifies the manufacturer for non-standard control channel messaging.</Comment>
+			<Value Description="Standard MFID">0x0000<Comment></Comment></Value>
+			<Value Description="Motorola Proprietary MFID">0x0010<Comment></Comment></Value>
+		</Field>
+		<Field Name="Hop Count" Pos="12" Size="4" BitFlag="true" BitPos="0">
+			<Data/>
+		</Field>
+		<Field Name="SLOT" Pos="12" Size="1" BitFlag="true" BitPos="4">
+			<Value Description="Slot One">0x0000<Comment></Comment></Value>
+			<Value Description="Slot Two">0x0001<Comment></Comment></Value>
+		</Field>
+		<Field Name="Original Fork Number" Pos="12" Size="3" BitFlag="true" BitPos="5">
+			<Data/>
+		</Field>
+		<Field Name="Source Repeater ID" Pos="13" Size="2" BitFlag="false">
+			<Data/>
+		</Field>
+		<Field Name="Repeater Mode Bit" Pos="15" Size="2" BitFlag="false">
+			<Data/>
+		</Field>
+		<Field Name="Repeater Service Bit" Pos="17" Size="3" BitFlag="false">
+			<Data/>
+		</Field>
+		<Field Name="CRC" Pos="20" Size="2" BitFlag="false">
+			<Data/>
+		</Field>
+		<Field Name="Data" Pos="22" Size="21" BitFlag="false">
+			<Comment></Comment>
+			<Data/>
+		</Field>
+		<Field Name="Outbound Flag" Pos="43" Size="1" BitFlag="false">
+			<Comment></Comment>
+			<Value Description="Outbound">0x0000<Comment></Comment></Value>
+		</Field>
+	</PDU>
+	<PDU Name="Inbound DBH SyncBeacon" Size="44" SecondaryKeyField="3,20">
+		<Comment></Comment>
+		<Field Name="Peer ID" Pos="0" Size="1" BitFlag="false">
+			<Comment></Comment>
+			<Data/>
+		</Field>
+		<Field Name="Slot ID" Pos="1" Size="1" BitFlag="false">
+			<Comment></Comment>
+			<Data/>
+		</Field>
+		<Field Name="Type" Pos="2" Size="1" BitFlag="false">
+			<Comment></Comment>
+			<Value Description="DBH Sync Beacon">0x000B<Comment></Comment></Value>
+		</Field>
+		<Field Name="Status" Pos="3" Size="1" BitFlag="false">
+			<Comment></Comment>
+			<Data/>
+		</Field>
+		<Field Name="Length" Pos="4" Size="2" BitFlag="false">
+			<Comment></Comment>
+		</Field>
+		<Field Name="SigBits" Pos="6" Size="2" BitFlag="false">
+			<Comment></Comment>
+		</Field>
+		<Field Name="Data Size" Pos="8" Size="2" BitFlag="false">
+			<Comment></Comment>
+		</Field>
+		<Field Name="Opcode" Pos="10" Size="6" BitFlag="true" BitPos="0">
+			<Value Description="SyncBeacon">0x0017</Value>
+		</Field>
+		<Field Name="LE Bit" Pos="10" Size="1" BitFlag="true" BitPos="6">
+			<Comment></Comment>
+		</Field>
+		<Field Name="PF - Protect Flag" Pos="10" Size="1" BitFlag="true" BitPos="7">
+			<Comment>this designates the protection mode for this CSBK</Comment>
+			<Value Description="Protected Mode">0x0001<Comment></Comment></Value>
+			<Value Description="Non-protected Mode">0x0000<Comment></Comment></Value>
+		</Field>
+		<Field Name="Manufacturer's ID" Pos="11" Size="1" BitFlag="false">
+			<Comment>identifies the manufacturer for non-standard control channel messaging.</Comment>
+			<Value Description="Standard MFID">0x0000<Comment></Comment></Value>
+			<Value Description="Motorola Proprietary MFID">0x0010<Comment></Comment></Value>
+		</Field>
+		<Field Name="Hop Count" Pos="12" Size="4" BitFlag="true" BitPos="0">
+			<Data/>
+		</Field>
+		<Field Name="SLOT" Pos="12" Size="1" BitFlag="true" BitPos="4">
+			<Value Description="Slot One">0x0000<Comment></Comment></Value>
+			<Value Description="Slot Two">0x0001<Comment></Comment></Value>
+		</Field>
+		<Field Name="Original Fork Number" Pos="12" Size="3" BitFlag="true" BitPos="5">
+			<Data/>
+		</Field>
+		<Field Name="Source Repeater ID" Pos="13" Size="2" BitFlag="false">
+			<Data/>
+		</Field>
+		<Field Name="Repeater Mode Bit" Pos="15" Size="2" BitFlag="false">
+			<Data/>
+		</Field>
+		<Field Name="Repeater Service Bit" Pos="17" Size="3" BitFlag="false">
+			<Data/>
+		</Field>
+		<Field Name="CRC" Pos="20" Size="2" BitFlag="false">
+			<Data/>
+		</Field>
+		<Field Name="Data" Pos="22" Size="21" BitFlag="false">
+			<Comment></Comment>
+			<Data/>
+		</Field>
+		<Field Name="Inbound Flag" Pos="43" Size="1" BitFlag="false">
+			<Comment></Comment>
+			<Value Description="Inbound">0x0001<Comment></Comment></Value>
 		</Field>
 	</PDU>
 	<PDU Name="Neptune Control Channel Short LC" Size="44" SecondaryKeyField="3,7">
