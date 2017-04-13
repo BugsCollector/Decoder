@@ -4343,16 +4343,16 @@
 		<Field Name="Source Repeater ID" Pos="13" Size="3" BitFlag="false">
 			<Data/>
 		</Field>
-		<Field Name="Repeater Mode Bit" Pos="16" Size="2" BitFlag="false">
+		<Field Name="Repeater Mode Bit" Pos="16" Size="1" BitFlag="false">
 			<Data/>
 		</Field>
-		<Field Name="Repeater Service Bit" Pos="18" Size="3" BitFlag="false">
+		<Field Name="Repeater Service Bit" Pos="17" Size="3" BitFlag="false">
 			<Data/>
 		</Field>
-		<Field Name="CRC" Pos="21" Size="2" BitFlag="false">
+		<Field Name="CRC" Pos="20" Size="2" BitFlag="false">
 			<Data/>
 		</Field>
-		<Field Name="Data" Pos="23" Size="20" BitFlag="false">
+		<Field Name="Data" Pos="22" Size="21" BitFlag="false">
 			<Comment></Comment>
 			<Data/>
 		</Field>
@@ -4417,16 +4417,16 @@
 		<Field Name="Source Repeater ID" Pos="13" Size="3" BitFlag="false">
 			<Data/>
 		</Field>
-		<Field Name="Repeater Mode Bit" Pos="16" Size="2" BitFlag="false">
+		<Field Name="Repeater Mode Bit" Pos="16" Size="1" BitFlag="false">
 			<Data/>
 		</Field>
-		<Field Name="Repeater Service Bit" Pos="18" Size="3" BitFlag="false">
+		<Field Name="Repeater Service Bit" Pos="17" Size="3" BitFlag="false">
 			<Data/>
 		</Field>
-		<Field Name="CRC" Pos="21" Size="2" BitFlag="false">
+		<Field Name="CRC" Pos="20" Size="2" BitFlag="false">
 			<Data/>
 		</Field>
-		<Field Name="Data" Pos="23" Size="20" BitFlag="false">
+		<Field Name="Data" Pos="22" Size="21" BitFlag="false">
 			<Comment></Comment>
 			<Data/>
 		</Field>
